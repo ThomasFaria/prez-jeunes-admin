@@ -1,0 +1,20 @@
+
+## :one: Principes et évolutions d'Observable HQ {.smaller}
+
+
+## :two: Site web statique vs dynamique {.smaller}
+
+
+## :three: Un écosystème déjà très riche
+
+
+## :four: Intégration à `Quarto` et `Framework` {.smaller}
+
+## :five: Traitement de données volumineuses
+
+## :six: Documentation intéractive et pédagogie
+
+# Conclusion
+
+## Conclusion {.smaller}
+

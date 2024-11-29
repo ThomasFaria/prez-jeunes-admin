@@ -1,51 +1,107 @@
 [
   {
-    "objectID": "slides/index.html#principes-et-évolutions-dobservable-hq",
-    "href": "slides/index.html#principes-et-évolutions-dobservable-hq",
-    "title": "Etre data scientist à l’Insee",
-    "section": "1️⃣ Principes et évolutions d’Observable HQ",
-    "text": "1️⃣ Principes et évolutions d’Observable HQ"
+    "objectID": "slides/index.html#de-léco-vers-linnovation",
+    "href": "slides/index.html#de-léco-vers-linnovation",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "De l’éco vers l’innovation",
+    "text": "De l’éco vers l’innovation\n\nEconomie à l’ENS Cachan\nMaster MiE puis stage à la DG Trésor\nCésure à la BCE : DG-Economics\nDécouverte data-science via l’économie (Statapp, Mémoire M2…)\n\nComplémentarité (insoupçonnée ?)\n\nSSP Lab ✨"
   },
   {
-    "objectID": "slides/index.html#site-web-statique-vs-dynamique",
-    "href": "slides/index.html#site-web-statique-vs-dynamique",
-    "title": "Etre data scientist à l’Insee",
-    "section": "2️⃣ Site web statique vs dynamique",
-    "text": "2️⃣ Site web statique vs dynamique"
+    "objectID": "slides/index.html#linnovation-à-linsee",
+    "href": "slides/index.html#linnovation-à-linsee",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "L’innovation à l’Insee",
+    "text": "L’innovation à l’Insee\n\nDiit (informatique) et SSP Lab (méthodologique)\nMais pas seulement (cf. Pierre L) !\nObjectif commun ➡️ accompagner les équipes au changement"
   },
   {
-    "objectID": "slides/index.html#un-écosystème-déjà-très-riche",
-    "href": "slides/index.html#un-écosystème-déjà-très-riche",
-    "title": "Etre data scientist à l’Insee",
-    "section": "3️⃣ Un écosystème déjà très riche",
-    "text": "3️⃣ Un écosystème déjà très riche"
+    "objectID": "slides/index.html#de-lexpérimentation-à-la-mise-en-production",
+    "href": "slides/index.html#de-lexpérimentation-à-la-mise-en-production",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "De l’expérimentation à la mise en production",
+    "text": "De l’expérimentation à la mise en production\n\nDe statisticien/économiste à data scientist\nPour créer de la valeur auprès de ses utilisateurs, un projet (de data science) doit être\n\nvalorisable ➡️ trouver le format de diffusion adapté\ndéployé ➡️ transitionner d’un environnement de développement vers un environnement de production\n\n\n🧱 Mur de la prod (Bonnes pratiques de développement)"
   },
   {
-    "objectID": "slides/index.html#intégration-à-quarto-et-framework",
-    "href": "slides/index.html#intégration-à-quarto-et-framework",
-    "title": "Etre data scientist à l’Insee",
-    "section": "4️⃣ Intégration à Quarto et Framework",
-    "text": "4️⃣ Intégration à Quarto et Framework"
+    "objectID": "slides/index.html#des-projets-concrets-pour-la-stat-publique",
+    "href": "slides/index.html#des-projets-concrets-pour-la-stat-publique",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "… des projets concrets pour la stat publique",
+    "text": "… des projets concrets pour la stat publique\n\nLa codification automatique, pierre angulaire de l’Insee\n\nMultiples nomenclatures\nRègles de décision vers modèles de ML\nEnjeux MLOps"
   },
   {
-    "objectID": "slides/index.html#traitement-de-données-volumineuses",
-    "href": "slides/index.html#traitement-de-données-volumineuses",
-    "title": "Etre data scientist à l’Insee",
-    "section": "5️⃣ Traitement de données volumineuses",
-    "text": "5️⃣ Traitement de données volumineuses"
+    "objectID": "slides/index.html#des-projets-concrets-pour-la-stat-publique-1",
+    "href": "slides/index.html#des-projets-concrets-pour-la-stat-publique-1",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "… des projets concrets pour la stat publique",
+    "text": "… des projets concrets pour la stat publique\n\nUn modèle de ML en production ca signifie :\n\nFaciliter sa mise à disposition (API)\n\n\n\nviewof activite = Inputs.text(\n  {label: '', value: 'coiffeur', width: 800}\n)\n\n\nurlApe = `https://codification-ape-dev.lab.sspcloud.fr/predict?description_activity=${activite}%20&type_form=X&event=01P&nb_echos_max=3&prob_min=0.0009`\n\nd3.json(urlApe).then( res =&gt; {\n  var IC, results;\n  ( {IC, ...results} = res )\n\n  IC = parseFloat(IC)\n\n  const rows = Object.values(results).map( obj =&gt; {\n    return `\n    &lt;tr&gt;\n      &lt;td&gt;${obj.code} | ${obj.libelle}&lt;/td&gt;\n      &lt;td&gt;${obj.probabilite.toFixed(3)}&lt;/td&gt;\n    &lt;/tr&gt;\n  `\n  }).join('')\n  \n  return html`\n  &lt;table&gt;\n    &lt;caption&gt;\n      Indice de confiance : ${IC.toFixed(3)}\n    &lt;/caption&gt;\n    &lt;tr&gt;\n      &lt;th style=\"text-align:center;\"&gt;Libellé (NAF 2025)&lt;/th&gt;\n      &lt;th&gt;Probabilité&lt;/th&gt;\n    &lt;/tr&gt;\n      ${rows}\n  &lt;/table&gt;`\n})"
   },
   {
-    "objectID": "slides/index.html#documentation-intéractive-et-pédagogie",
-    "href": "slides/index.html#documentation-intéractive-et-pédagogie",
-    "title": "Etre data scientist à l’Insee",
-    "section": "6️⃣ Documentation intéractive et pédagogie",
-    "text": "6️⃣ Documentation intéractive et pédagogie"
+    "objectID": "slides/index.html#des-projets-concrets-pour-la-stat-publique-2",
+    "href": "slides/index.html#des-projets-concrets-pour-la-stat-publique-2",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "… des projets concrets pour la stat publique",
+    "text": "… des projets concrets pour la stat publique\n\nUn modèle de ML en production ca signifie :\n\nFaciliter sa mise à disposition (API)\nContrôler sa performance au cours du temps\n\n\n📊 Tableau de bord 📈"
   },
   {
-    "objectID": "slides/index.html#conclusion-1",
-    "href": "slides/index.html#conclusion-1",
-    "title": "Etre data scientist à l’Insee",
+    "objectID": "slides/index.html#des-projets-concrets-pour-la-stat-publique-3",
+    "href": "slides/index.html#des-projets-concrets-pour-la-stat-publique-3",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "… des projets concrets pour la stat publique",
+    "text": "… des projets concrets pour la stat publique\n\nUn modèle de ML en production ca signifie :\n\nFaciliter sa mise à disposition (API)\nContrôler sa performance au cours du temps\nRé-entrainer régulièrement\n\n\n➡️ Autant d’axes où l’innovation est possible !"
+  },
+  {
+    "objectID": "slides/index.html#des-projets-concrets-pour-la-stat-publique-4",
+    "href": "slides/index.html#des-projets-concrets-pour-la-stat-publique-4",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "… des projets concrets pour la stat publique",
+    "text": "… des projets concrets pour la stat publique\n\nMais aussi :\n\nDiffusion du RP avec parquet\nFidélimmo"
+  },
+  {
+    "objectID": "slides/index.html#des-projets-plus-innovant-pour-la-stat-publique",
+    "href": "slides/index.html#des-projets-plus-innovant-pour-la-stat-publique",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "… des projets plus innovant pour la stat publique",
+    "text": "… des projets plus innovant pour la stat publique\n\nUtilisation d’images satellites pour améliorer le recensement 🛰️\n\nExemple d’application POC\n\nDéveloppement d’un “StatBot” ayant le site insee.fr comme base de connaissance 🤖"
+  },
+  {
+    "objectID": "slides/index.html#des-formations",
+    "href": "slides/index.html#des-formations",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "… des formations",
+    "text": "… des formations\n\nDes funathons annuels pour le SSP\n\nDébut 2026 : Funathon européen ! 🇪🇺\n\nDes cours :\n\nPython pour la data science (Lino)\nMise en production (Lino & Romain)\n\nDes tutoriels :\n\nBonnes pratiques\nMLOps\nTravailler avec des données volumineuses et massives\n…"
+  },
+  {
+    "objectID": "slides/index.html#des-voyages-missions-à-létranger",
+    "href": "slides/index.html#des-voyages-missions-à-létranger",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "… des voyages missions à l’étranger",
+    "text": "… des voyages missions à l’étranger\nSéminaires auprès des pairs\nUn illustre collègue à NTTS\nUne fondue à l’ONU"
+  },
+  {
+    "objectID": "slides/index.html#des-voyages-missions-à-létranger-1",
+    "href": "slides/index.html#des-voyages-missions-à-létranger-1",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "… des voyages missions à l’étranger",
+    "text": "… des voyages missions à l’étranger\nCoopération internationale\nLe SSP Lab en costard\nBCEAO"
+  },
+  {
+    "objectID": "slides/index.html#des-voyages-missions-à-létranger-2",
+    "href": "slides/index.html#des-voyages-missions-à-létranger-2",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "… des voyages missions à l’étranger",
+    "text": "… des voyages missions à l’étranger\nVisites terrain\nL’Insee en Guyane\nOn recense fort"
+  },
+  {
+    "objectID": "slides/index.html#de-lopen-source",
+    "href": "slides/index.html#de-lopen-source",
+    "title": "Séminaire d’intégration des administrateurs",
+    "section": "… de l’open source",
+    "text": "… de l’open source\n\nPourquoi ouvrir ses codes ?\n\nAuditabilité des agents publics\nCollaboration entre administrations / partenaires\nQualité du code et reproductibilité des résultats\nUne vitrine pour l’auteur.e et pour l’Insee"
+  },
+  {
+    "objectID": "slides/index.html#conclusion",
+    "href": "slides/index.html#conclusion",
+    "title": "Séminaire d’intégration des administrateurs",
     "section": "Conclusion",
-    "text": "Conclusion"
+    "text": "Conclusion\n\nVoir l’informatique comme moyen d’autonomisation plutôt qu’une contrainte\nVous arrivez dans un contexte de modernisation\n\nSaisissez-vous des outils innovants !\nL’Insee n’est pas si en retard pour pouvoir innover, profitez-en !\n\n\n\nimport { debounce } from \"@mbostock/debouncing-input\""
   }
 ]

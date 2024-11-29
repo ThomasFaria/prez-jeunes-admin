@@ -1,20 +1,185 @@
 
-## :one: Principes et évolutions d'Observable HQ {.smaller}
+## De l'éco vers l'innovation
+
+- [**Economie**]{.blue2} à l'ENS Cachan 
+- Master Mi[**E**]{.blue2} puis stage à la DG Trésor
+- Césure à la BCE : DG-[**Economics**]{.blue2}
+- Découverte [**data-science**]{.orange} via l'[**économie**]{.blue2} (Statapp, Mémoire M2...)
+  - Complémentarité (insoupçonnée ?)
+- [**SSP Lab**]{.orange} ✨
+
+## L'innovation à l'Insee
+
+- Diit ([**informatique**]{.orange}) et SSP Lab ([**méthodologique**]{.orange})
+- Mais [**pas seulement**]{.blue2} (cf. Pierre L) !
+
+- Objectif commun ➡️ [**accompagner**]{.orange} les équipes au changement
+
+## De l'expérimentation à la mise en production
+
+- De [**statisticien**]{.orange}/[**économiste**]{.orange}  à [**data scientist**]{.blue2}
+
+- Pour créer de la [**valeur**]{.blue2} auprès de ses utilisateurs, un projet (de data science) doit être
+  - [**valorisable**]{.blue2} ➡️ trouver le format de diffusion adapté
+  - [**déployé**]{.blue2} ➡️ transitionner d'un environnement de [**développement**]{.orange} vers un environnement de [**production**]{.blue2}
+
+🧱 Mur de la prod (Bonnes pratiques de développement)
+
+# Travailler au SSP Lab c'est..
+
+## ... des projets concrets pour la stat publique
+
+- La [**codification automatique**]{.orange}, pierre angulaire de l'Insee
+  - Multiples [**nomenclatures**]{.blue2}
+  - Règles de décision vers modèles de [**ML**]{.blue2}
+  - Enjeux [**MLOps**]{.blue2}
+
+## ... des projets concrets pour la stat publique
+
+- Un [**modèle de ML**]{.orange} en production ca signifie :
+  - Faciliter sa [**mise à disposition**]{.blue2} (API)
 
 
-## :two: Site web statique vs dynamique {.smaller}
+```{ojs}
+viewof activite = Inputs.text(
+  {label: '', value: 'coiffeur', width: 800}
+)
 
 
-## :three: Un écosystème déjà très riche
+urlApe = `https://codification-ape-dev.lab.sspcloud.fr/predict?description_activity=${activite}%20&type_form=X&event=01P&nb_echos_max=3&prob_min=0.0009`
+
+d3.json(urlApe).then( res => {
+  var IC, results;
+  ( {IC, ...results} = res )
+
+  IC = parseFloat(IC)
+
+  const rows = Object.values(results).map( obj => {
+    return `
+    <tr>
+      <td>${obj.code} | ${obj.libelle}</td>
+      <td>${obj.probabilite.toFixed(3)}</td>
+    </tr>
+  `
+  }).join('')
+  
+  return html`
+  <table>
+    <caption>
+      Indice de confiance : ${IC.toFixed(3)}
+    </caption>
+    <tr>
+      <th style="text-align:center;">Libellé (NAF 2025)</th>
+      <th>Probabilité</th>
+    </tr>
+      ${rows}
+  </table>`
+})
+```
+
+## ... des projets concrets pour la stat publique
+
+- Un [**modèle de ML**]{.orange} en production ca signifie :
+  - Faciliter sa [**mise à disposition**]{.blue2} (API)
+  - [**Contrôler**]{.blue2} sa performance au cours du temps
+
+ 📊 [Tableau de bord](https://inseefrlab.github.io/codif-ape-dashboard/performance){preview-link="true"} 📈
+
+## ... des projets concrets pour la stat publique
+
+- Un [**modèle de ML**]{.orange} en production ca signifie :
+  - Faciliter sa [**mise à disposition**]{.blue2} (API)
+  - [**Contrôler**]{.blue2} sa performance au cours du temps
+  - [**Ré-entrainer**]{.blue2} régulièrement
+
+➡️ Autant d'axes où l'innovation est possible ! 
 
 
-## :four: Intégration à `Quarto` et `Framework` {.smaller}
+## ... des projets concrets pour la stat publique
 
-## :five: Traitement de données volumineuses
+- Mais aussi :
+  - [**Diffusion du RP**]{.orange} avec parquet
+  - [**Fidélimmo**]{.orange}
 
-## :six: Documentation intéractive et pédagogie
 
-# Conclusion
+## ... des projets plus innovant pour la stat publique
 
-## Conclusion {.smaller}
+- Utilisation d'[**images satellites**]{.orange} pour améliorer le recensement 🛰️
+  - Exemple d'application [POC](https://inseefrlab.github.io/satellite-images-webapp/){preview-link="true"} 
+- Développement d'un [**"StatBot"**]{.orange} ayant le site `insee.fr` comme base de connaissance 🤖
 
+## ... des formations
+
+- Des [**funathons**]{.orange} annuels pour le SSP
+  - Début 2026 : Funathon européen ! 🇪🇺
+- Des [**cours**]{.orange} : 
+  - Python pour la data science (Lino) 
+  - Mise en production (Lino & Romain)
+- Des [**tutoriels**]{.orange} : 
+  - Bonnes pratiques
+  - MLOps
+  - Travailler avec des données volumineuses et massives
+  - ...
+
+## ... des ~~voyages~~ missions à l'étranger
+
+[[**Séminaires**]{.orange} auprès des pairs]{.absolute bottom=175 left=280}
+
+[Un illustre collègue à NTTS]{.absolute left=-240 top=150}
+
+[Une fondue à l'ONU]{.absolute top=150 right=-190}
+
+![](img/olivier-ntts.jpg){.absolute top=200 left=-200 width="369" height="480"}
+
+![](img/onu.jpg){.absolute top=100 right=270 width="500" height="300"}
+
+![](img/fondue-onu.jpg){.absolute bottom=0 right=-200 width="369" height="480"}
+
+
+## ... des ~~voyages~~ missions à l'étranger
+
+[[**Coopération internationale**]{.orange}]{.absolute top=100 left=280}
+
+[Le SSP Lab en costard]{.absolute left=0 bottom=50}
+
+[BCEAO]{.absolute bottom=50 right=50}
+
+![](img/costards.jpg){.absolute top=200 left=-50 width="520" height="390"}
+
+![](img/bceao.jpg){.absolute bottom=80 right=-50 width="369" height="390"}
+
+## ... des ~~voyages~~ missions à l'étranger
+
+
+[[**Visites terrain**]{.orange}]{.center}
+
+[L'Insee en Guyane]{.absolute left=50 bottom=50}
+
+[On recense fort]{.absolute bottom=50 right=0}
+
+![](img/guyane1.jpg){.absolute top=140 left=-100 width="600" height="450"}
+
+![](img/guyane2.jpg){.absolute bottom=80 right=-50 width="369" height="450"}
+
+
+## ... de l'open source
+
+- Pourquoi [**ouvrir**]{.orange} ses codes ?
+  - [**Auditabilité**]{.blue2} des agents publics
+  - [**Collaboration**]{.blue2} entre administrations / partenaires
+  - [**Qualité**]{.blue2} du code et [**reproductibilité**]{.blue2} des résultats
+  - Une [**vitrine**]{.blue2} pour l'auteur.e et pour l'Insee
+
+
+## Conclusion
+
+- Voir l'[**informatique**]{.orange} comme moyen d'[**autonomisation**]{.blue2} plutôt qu'une contrainte
+
+- Vous arrivez dans un [**contexte de modernisation**]{.orange}
+  - Saisissez-vous des [**outils innovants**]{.blue2} !
+  - L'Insee n'est pas ~~si~~ en retard pour pouvoir innover, profitez-en ! 
+
+
+```{ojs}
+import { debounce } from "@mbostock/debouncing-input" 
+```

@@ -3,11 +3,17 @@ project:
   render:
     - /slides/index.qmd
 
-title: "[**Etre data scientist à l'Insee**]{.orange}"
-# author: 
-#   - "[**Thomas Faria**]{.orange}"
+title: Séminaire d'intégration des administrateurs
+subtitle: |
+  **[Session innovation]{.orange}**
+author:
+    - name: "**[Thomas Faria]{.blue2}**"
+      # email: thomas.faria@insee.fr
+      # affiliations:
+      #   - name: "[__Insee__]{.orange}"
+
 date: 11/28/2024
-date-format: "[**28/11/2024**]"
+date-format: "28/11/2024"
 slide-number: true
 footer: |
 # uncomment for French presentations:

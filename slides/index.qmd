@@ -103,7 +103,7 @@ d3.json(urlApe).then( res => {
   - [**Extraction de tableaux**]{.orange} dans les pdf des comptes sociaux
   - Travaux d'[**appariements**]{.orange} entre différentes sources de données (Résil, CSNS...)
 
-## ... des projets plus innovant pour la stat publique
+## ... des projets plus innovants pour la stat publique
 
 - Utilisation d'[**images satellites**]{.orange} pour améliorer le recensement 🛰️
   - Exemple d'application [POC](https://inseefrlab.github.io/satellite-images-webapp/){preview-link="true"} 

@@ -100,7 +100,8 @@ d3.json(urlApe).then( res => {
 - Mais aussi :
   - [**Diffusion du RP**]{.orange} avec parquet
   - [**Fidélimmo**]{.orange}
-
+  - [**Extraction de tableaux**]{.orange} dans les pdf des comptes sociaux
+  - Travaux d'[**appariements**]{.orange} entre différentes sources de données (Résil, CSNS...)
 
 ## ... des projets plus innovant pour la stat publique
 
